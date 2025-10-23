@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy 
-filename='q9.csv'
+filename='q5.csv'
 df=pd.read_csv(filename)
-df['lower']=range(20,90,10)
-df['upper']=range(30,100,10)
+df['lower']=range(135,180,5)
+df['upper']=range(140,176,5)
 df['freq']=numpy.nan
 # df['upper']=numpy.nan
 
