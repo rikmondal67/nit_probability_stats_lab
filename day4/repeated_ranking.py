@@ -13,6 +13,8 @@ def findRank(df):
     n=df['rx'].max()
 
     #important syntax
+    #converting the repeatation into a dictonary
+    
 
     x_count=df['x'].value_counts().to_dict()
     y_count=df['y'].value_counts().to_dict()
