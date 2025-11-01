@@ -1,14 +1,15 @@
 import pandas as pd
 
-df=pd.read_csv('q3.csv')
+df=pd.read_csv('q2.csv')
 
 def findRank(df):
+    rval=4
     df['rx']=df['x'].rank(method='average',ascending=False)
     df['ry']=df['y'].rank(method='average',ascending=False)
 
-    df['di']=df['rx']-df['ry']
+    df['di']=(df['rx']-df['ry']).round(rval)
 
-    df['di2']=df['di']**2
+    df['di2']=(df['di']**2).round(rval)
 
     n=df['rx'].max()
 
@@ -39,13 +40,13 @@ def findRank(df):
     n=len(df)
 
 
-    r=1-(6*((df['di2'].sum())+m))/(n*((n**2)-1))
+    r=(1-(6*((df['di2'].sum().round(rval))+m))/(n*((n**2)-1))).round(rval)
 
     # print(r)
 
     # print(df)
 
-    return r.round(5),df
+    return r.round(rval),df
 
 r,df=findRank(df)
 
