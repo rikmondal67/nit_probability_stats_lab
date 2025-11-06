@@ -3,11 +3,10 @@ import csv
 import numpy as np
 from scipy.stats import norm
 
-# Function to calculate the cumulative distribution function of the standard normal distribution
+
 def Phi(z):
     return 0.5 * (1.0 + math.erf(z / math.sqrt(2.0)))
 
-# Read data from CSV file
 def read_csv(file_name):
     lower = []
     upper = []
